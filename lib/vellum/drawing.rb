@@ -2,14 +2,13 @@ module Vellum
   class Drawing
     def initialize(width, height)
       @width, @height = width, height
-
-      @parts = []
+      @layers         = []
     end
 
     def <<(part)
-      parts << parts
+      layers << part
     end
 
-    attr_reader :width, :height, :parts
+    attr_reader :width, :height, :layers
   end
 end

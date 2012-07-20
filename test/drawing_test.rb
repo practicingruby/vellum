@@ -9,21 +9,10 @@ describe Vellum::Drawing do
     drawing.height.must_equal(400)
   end
 
-  # FIXME: This is a crappy test.
-  it "must have parts" do
+  it "must have layers" do
     drawing = Vellum::Drawing.new(300,400)
     drawing << Object.new << Object.new << Object.new
 
-    drawing.parts.count.must_equal(3)
+    drawing.layers.count.must_equal(3)
   end
 end
-
-=begin
-drawing = Vellum::Drawing.new(300,400)
-pen     = Vellum::Pen.new(:color => :red)
-
-pen.ink(drawing) do
-  line(top_left,     bottom_right)
-  line(bottom_left,  top_right)
-end
-=end
